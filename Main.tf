@@ -1,0 +1,24 @@
+
+
+terraform {
+  required_version = "~> 1.1"
+  required_providers {
+    aws = {
+      version = "~>3.1"
+    }
+  }
+}
+provider "aws" {
+   region = "ap-south-1"
+   access_key = "AKIAVWABJOSLZ6AGBBVKJHGKJHGKV4H"
+   secret_key = "OqkMAWOmCno3bY3kcUQJffsirJ6RGRT+ghfjhgfg,nm.jhsDklTFzy"
+}
+resource "aws_instance" "myec2" {
+ 
+     ami = "ami-00bb6a80f01f03502"
+     instance_type = "t2.micro"
+     count = 2
+     tags = {
+        Name = "myinstance ${count.index+1}"
+          }
+}
