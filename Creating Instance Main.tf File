@@ -10,12 +10,12 @@ terraform {
 }
 provider "aws" {
    region = "ap-south-1"
-   access_key = "AKIAVWABJOSLZ6AGBBVKJHGKJHGKV4H"
-   secret_key = "OqkMAWOmCno3bY3kcUQJffsirJ6RGRT+ghfjhgfg,nm.jhsDklTFzy"
+   access_key = ""
+   secret_key = ""
 }
 resource "aws_instance" "myec2" {
  
-     ami = "ami-00bb6a80f01f03502"
+     ami = ""
      instance_type = "t2.micro"
      count = 2
      tags = {
